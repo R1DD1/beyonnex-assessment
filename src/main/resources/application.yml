@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: beyonnex-assessment
+
+server:
+  servlet:
+    context-path: /${spring.application.name}
+  port: 8080
+  shutdown: graceful
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui
