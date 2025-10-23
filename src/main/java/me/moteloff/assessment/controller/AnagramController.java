@@ -24,7 +24,7 @@ public interface AnagramController {
     ResponseEntity<AnagramCheckResponseDto> check(@Valid @RequestBody AnagramCheckDto anagramCheckDto);
 
     @Operation(
-            summary = "Find anagram",
+            summary = "Find anagrams",
             description = "(feature 2)"
     )
     @PostMapping("/find")
