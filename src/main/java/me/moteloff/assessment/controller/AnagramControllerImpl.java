@@ -3,7 +3,7 @@ package me.moteloff.assessment.controller;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import me.moteloff.assessment.dto.check.AnagramCheckDto;
+import me.moteloff.assessment.dto.check.CheckAnagramDto;
 import me.moteloff.assessment.dto.check.AnagramCheckResponseDto;
 import me.moteloff.assessment.dto.find.FindAnagramDto;
 import me.moteloff.assessment.dto.find.FindAnagramResponseDto;
@@ -19,7 +19,7 @@ public class AnagramControllerImpl implements AnagramController {
     AnagramService anagramService;
 
     @Override
-    public ResponseEntity<AnagramCheckResponseDto> check(AnagramCheckDto dto) {
+    public ResponseEntity<AnagramCheckResponseDto> check(CheckAnagramDto dto) {
         var isAnagram = this.anagramService.check(dto.first(), dto.second());
         return ResponseEntity.ok(new AnagramCheckResponseDto(isAnagram));
     }

@@ -5,7 +5,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import me.moteloff.assessment.dto.find.FindAnagramDto;
 import me.moteloff.assessment.dto.find.FindAnagramResponseDto;
-import me.moteloff.assessment.dto.check.AnagramCheckDto;
+import me.moteloff.assessment.dto.check.CheckAnagramDto;
 import me.moteloff.assessment.dto.check.AnagramCheckResponseDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +21,7 @@ public interface AnagramController {
             description = "(feature 1)"
     )
     @PostMapping("/check")
-    ResponseEntity<AnagramCheckResponseDto> check(@Valid @RequestBody AnagramCheckDto anagramCheckDto);
+    ResponseEntity<AnagramCheckResponseDto> check(@Valid @RequestBody CheckAnagramDto checkAnagramDto);
 
     @Operation(
             summary = "Find anagrams",
