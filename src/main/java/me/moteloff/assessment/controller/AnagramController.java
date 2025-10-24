@@ -17,15 +17,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface AnagramController {
 
     @Operation(
-            summary = "Checks if anagrams",
-            description = "(feature 1)"
+            summary = "Checks if two words are anagrams",
+            description = "(feature 1) Compares two given words to determine if they are anagrams. " +
+                          "Both words are also saved to the repository for further use."
     )
     @PostMapping("/check")
     ResponseEntity<AnagramCheckResponseDto> check(@Valid @RequestBody CheckAnagramDto checkAnagramDto);
 
     @Operation(
-            summary = "Find anagrams",
-            description = "(feature 2)"
+            summary = "Finds all anagrams for a given word",
+            description = "(feature 2) Searches the repository for all previously saved words " +
+                          "and returns those that are anagrams of the provided word."
     )
     @PostMapping("/find")
     ResponseEntity<FindAnagramResponseDto> findByWord(@Valid @RequestBody FindAnagramDto findAnagramDto);
